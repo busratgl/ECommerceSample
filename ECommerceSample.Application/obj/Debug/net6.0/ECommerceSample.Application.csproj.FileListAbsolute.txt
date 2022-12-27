@@ -1,0 +1,17 @@
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Application.deps.json
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Application.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Application.pdb
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Domain.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Domain.pdb
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.csproj.AssemblyReference.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.AssemblyInfoInputs.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.AssemblyInfo.cs
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.csproj.CoreCompileInputs.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.csproj.CopyComplete
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\refint\ECommerceSample.Application.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.pdb
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ref\ECommerceSample.Application.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Application.runtimeconfig.json
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.genruntimeconfig.cache

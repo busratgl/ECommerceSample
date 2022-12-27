@@ -1,0 +1,14 @@
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\bin\Debug\net6.0\ECommerceSample.Domain.deps.json
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\bin\Debug\net6.0\ECommerceSample.Domain.runtimeconfig.json
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\bin\Debug\net6.0\ECommerceSample.Domain.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\bin\Debug\net6.0\ECommerceSample.Domain.pdb
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.csproj.AssemblyReference.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.AssemblyInfoInputs.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.AssemblyInfo.cs
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.csproj.CoreCompileInputs.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\refint\ECommerceSample.Domain.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.pdb
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ECommerceSample.Domain.genruntimeconfig.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Domain\obj\Debug\net6.0\ref\ECommerceSample.Domain.dll
