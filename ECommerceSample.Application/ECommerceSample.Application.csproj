@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\ECommerceSample.Domain\ECommerceSample.Domain.csproj" />
+      <ProjectReference Include="..\ECommerceSample.Infrastructure\ECommerceSample.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -21,7 +22,6 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.2-mauipre.1.22102.15" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,3 +1,5 @@
+using DotNetCore.CAP;
+using ECommerceSample.Application.Messaging.OrderCreated;
 using ECommerceSample.Application.Repositories.BasketItem;
 using ECommerceSample.Application.Repositories.Order;
 using ECommerceSample.Application.Repositories.OrderItem;
@@ -14,15 +16,19 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandReque
     private readonly IBasketItemWriteRepository _basketItemWriteRepository;
     private readonly IOrderItemWriteRepository _orderItemWriteRepository;
     private readonly IUserReadRepository _userReadRepository;
+    private readonly ICapPublisher _capPublisher;
 
     public CreateOrderCommandHandler(IOrderWriteRepository orderWriteRepository,
-        IBasketItemWriteRepository basketItemWriteRepository, IOrderItemWriteRepository orderItemWriteRepository,
-        IUserReadRepository userReadRepository)
+        IBasketItemWriteRepository basketItemWriteRepository,
+        IOrderItemWriteRepository orderItemWriteRepository,
+        IUserReadRepository userReadRepository,
+        ICapPublisher capPublisher)
     {
         _orderWriteRepository = orderWriteRepository;
         _basketItemWriteRepository = basketItemWriteRepository;
         _orderItemWriteRepository = orderItemWriteRepository;
         _userReadRepository = userReadRepository;
+        _capPublisher = capPublisher;
     }
 
     public async Task<CreateOrderCommandResponse> Handle(CreateOrderCommandRequest request,
@@ -61,6 +67,11 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandReque
 
         await _basketItemWriteRepository.SaveAsync();
         await _orderItemWriteRepository.SaveAsync();
+
+        await _capPublisher.PublishAsync("order.created", new OrderCreatedEvent()
+        {
+            OrderId = order.Id
+        }, cancellationToken: cancellationToken);
 
         return new CreateOrderCommandResponse()
         {

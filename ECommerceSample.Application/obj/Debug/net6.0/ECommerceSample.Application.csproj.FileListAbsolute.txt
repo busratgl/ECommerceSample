@@ -15,3 +15,5 @@ C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Deb
 C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ref\ECommerceSample.Application.dll
 C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Application.runtimeconfig.json
 C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\obj\Debug\net6.0\ECommerceSample.Application.genruntimeconfig.cache
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Infrastructure.dll
+C:\Users\tuglu\RiderProjects\ECommerceSample\ECommerceSample.Application\bin\Debug\net6.0\ECommerceSample.Infrastructure.pdb

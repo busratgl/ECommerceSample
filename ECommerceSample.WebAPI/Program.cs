@@ -1,4 +1,5 @@
 using ECommerceSample.Application;
+using ECommerceSample.Infrastructure;
 using ECommerceSample.Persistence;
 using ECommerceSample.WebAPI.Middlewares;
 using FluentValidation.AspNetCore;
@@ -9,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices();
+builder.Services.AddInfrastructureServices();
+
 
 
 builder.Services.AddControllers().AddFluentValidation(validationConfiguration =>

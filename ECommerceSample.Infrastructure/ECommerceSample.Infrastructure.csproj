@@ -7,6 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="DotNetCore.CAP" Version="7.0.1" />
+      <PackageReference Include="DotNetCore.CAP.InMemoryStorage" Version="7.0.1" />
+      <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="7.0.1" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
         <PrivateAssets>all</PrivateAssets>

@@ -1,3 +1,4 @@
+using ECommerceSample.Application.Messaging.OrderCreated;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,5 +9,6 @@ public static class ServiceRegistration
     public static void AddApplicationServices(this IServiceCollection serviceCollection)
     {
         serviceCollection.AddMediatR(typeof(ServiceRegistration));
+        serviceCollection.AddTransient<OrderCreatedEventHandler>();
     }
 }

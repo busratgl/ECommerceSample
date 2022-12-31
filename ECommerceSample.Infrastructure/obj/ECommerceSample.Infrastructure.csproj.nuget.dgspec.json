@@ -40,6 +40,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DotNetCore.CAP": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "DotNetCore.CAP.InMemoryStorage": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "DotNetCore.CAP.RabbitMQ": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.10, )"
