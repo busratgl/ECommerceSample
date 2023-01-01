@@ -23,10 +23,6 @@
       </PackageReference>
       <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="CQRS\Balance\Commands" />
-    </ItemGroup>
     
 
 </Project>
