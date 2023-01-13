@@ -7,36 +7,29 @@ using ECommerceSample.Application.Repositories.User;
 using ECommerceSample.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ECommerceSample.Application.CQRS.Orders.Commands.CreateOrder;
 
 public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandRequest, CreateOrderCommandResponse>
 {
-    private readonly IOrderWriteRepository _orderWriteRepository;
-    private readonly IBasketItemWriteRepository _basketItemWriteRepository;
-    private readonly IOrderItemWriteRepository _orderItemWriteRepository;
-    private readonly IUserReadRepository _userReadRepository;
-    private readonly ICapPublisher _capPublisher;
+    private readonly IServiceProvider _serviceProvider;
 
-    public CreateOrderCommandHandler(IOrderWriteRepository orderWriteRepository,
-        IBasketItemWriteRepository basketItemWriteRepository,
-        IOrderItemWriteRepository orderItemWriteRepository,
-        IUserReadRepository userReadRepository,
-        ICapPublisher capPublisher)
+    public CreateOrderCommandHandler(IServiceProvider serviceProvider)
     {
-        _orderWriteRepository = orderWriteRepository;
-        _basketItemWriteRepository = basketItemWriteRepository;
-        _orderItemWriteRepository = orderItemWriteRepository;
-        _userReadRepository = userReadRepository;
-        _capPublisher = capPublisher;
+        _serviceProvider = serviceProvider;
     }
 
     public async Task<CreateOrderCommandResponse> Handle(CreateOrderCommandRequest request,
         CancellationToken cancellationToken)
     {
-        var user = await _userReadRepository.Table.AsNoTracking()
-            .Include(u => u.Basket)
-            .FirstOrDefaultAsync(u => u.Id == request.UserId, cancellationToken: cancellationToken);
+        var orderWriteRepository = _serviceProvider.GetService<IOrderWriteRepository>();
+        var basketItemWriteRepository = _serviceProvider.GetService<IBasketItemWriteRepository>();
+        var orderItemWriteRepository = _serviceProvider.GetService<IOrderItemWriteRepository>();
+        var userReadRepository = _serviceProvider.GetService<IUserReadRepository>();
+        var capPublisher = _serviceProvider.GetService<ICapPublisher>();
+        
+        var user = await userReadRepository.SingleGetAsync(x=> x.Id == request.UserId);
 
         var order = new Order()
         {
@@ -45,11 +38,11 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandReque
             UserId = user.Id
         };
 
-        var isSuccess = await _orderWriteRepository.CreateAsync(order);
-        await _orderWriteRepository.SaveAsync();
+        var isSuccess = await orderWriteRepository.CreateAsync(order);
+        await orderWriteRepository.SaveAsync();
 
         var basketItems =
-            await _basketItemWriteRepository.Table.Where(x => x.BasketId == user.Basket.Id)
+            await basketItemWriteRepository.Table.Where(x => x.BasketId == user.Basket.Id)
                 .ToListAsync(cancellationToken: cancellationToken);
 
         foreach (var basketItem in basketItems)
@@ -60,15 +53,15 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandReque
                 ProductId = basketItem.ProductId
             };
 
-            await _orderItemWriteRepository.CreateAsync(orderItem);
+            await orderItemWriteRepository.CreateAsync(orderItem);
 
             basketItem.IsDeleted = true;
         }
 
-        await _basketItemWriteRepository.SaveAsync();
-        await _orderItemWriteRepository.SaveAsync();
+        await basketItemWriteRepository.SaveAsync();
+        await orderItemWriteRepository.SaveAsync();
 
-        await _capPublisher.PublishAsync("order.created", new OrderCreatedEvent()
+        await capPublisher.PublishAsync("order.created", new OrderCreatedEvent()
         {
             OrderId = order.Id
         }, cancellationToken: cancellationToken);
